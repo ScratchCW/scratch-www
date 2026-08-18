@@ -886,7 +886,7 @@ class Preview extends React.Component {
                             onUpdateProjectThumbnail={this.props.handleUpdateProjectThumbnail}
                         />
                     </Page> :
-                    <React.Fragment>
+                    <div className="gui">
                         <Notice />
                         {showGUI && (
                             <IntlGUI
@@ -903,7 +903,6 @@ class Preview extends React.Component {
                                 canRemix={this.props.canRemix}
                                 canSave={this.props.canSave}
                                 canShare={this.props.canShare}
-                                className="gui"
                                 cloudHost={this.props.cloudHost}
                                 enableCommunity={this.props.enableCommunity}
                                 hasCloudPermission={this.props.isScratcher}
@@ -941,7 +940,7 @@ class Preview extends React.Component {
                             )
                         )}
                         <CanceledDeletionModal />
-                    </React.Fragment>
+                    </div>
                 }
             </React.Fragment>
         );
