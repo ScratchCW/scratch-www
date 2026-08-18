@@ -31,7 +31,7 @@ const getLocale = () => {
             locale = locale.split('-')[0];
         }
         if (typeof window._messages[locale] === 'undefined') {
-            // Language appears to not be supported – fall back to 'en'
+            // Language appears to not be supported – fall back to 'zh-cn'
             locale = 'zh-cn';
         }
     }

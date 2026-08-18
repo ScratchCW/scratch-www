@@ -4,6 +4,8 @@ const React = require('react');
 const Page = require('../../components/page/www/page.jsx');
 const render = require('../../lib/render.jsx');
 
+const { getLocale } = require('../../lib/locales.js');
+
 const previewActions = require('../../redux/preview.js');
 const commentActions = require('../../redux/comments.js');
 
@@ -21,7 +23,7 @@ if (isSupportedBrowser()) {
             ...ProjectView.guiReducers
         },
         {
-            locales: ProjectView.initLocale(ProjectView.localesInitialState, window._locale),
+            locales: ProjectView.initLocale(ProjectView.localesInitialState, getLocale()),
             scratchGui: ProjectView.initGuiState(ProjectView.guiInitialState)
         },
         ProjectView.guiMiddleware,

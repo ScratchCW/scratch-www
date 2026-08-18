@@ -34,22 +34,22 @@
     <meta name="format-detection" content="telephone=no">
 
     <% if (!htmlWebpackPlugin.options.dynamicMetaTags) { %>
-    <title>Scratch创世界 - <%= htmlWebpackPlugin.options.title %></title>
+    <title>Scratch创世界 - 社区 - <%= htmlWebpackPlugin.options.title %></title>
 
     <!-- Search & Open Graph-->
+    <meta name="author" content="<%= htmlWebpackPlugin.options.author %>"/>
+    <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
     <meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
-    <meta name="google-site-verification" content="m_3TAXDreGTFyoYnEmU9mcKB4Xtw5mw6yRkuJtXRKxM" />
 
     <meta property="og:url" content="https://www.scratch-cw.top/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Scratch创世界 - <%= htmlWebpackPlugin.options.title %>" />
+    <meta property="og:title" content="Scratch创世界 - 社区 - <%= htmlWebpackPlugin.options.title %>" />
     <meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
     <meta property="og:description" content="<%= htmlWebpackPlugin.options.description %>" />
     <meta property="og:image" content="<%- htmlWebpackPlugin.options.og_image %>" />
     <meta property="og:image:type" content="<%- htmlWebpackPlugin.options.og_image_type %>" />
     <meta property="og:image:width" content="<%- htmlWebpackPlugin.options.og_image_width %>" />
     <meta property="og:image:height" content="<%- htmlWebpackPlugin.options.og_image_height %>" />
-    <meta name="keywords" content="Scratch社区, Scratch创世界, Scratch, Scratch编辑器" />
     <% } %>
 
     <!-- Favicon & CSS normalize -->

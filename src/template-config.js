@@ -13,10 +13,12 @@ module.exports = {
 
     // Search and metadata
     title: '想象、编程、分享',
+    author: 'Scratch创世界 - 社区',
     description:
-        'Scratch创世界是一个免费的编程语言和在线社区，' +
+        'Scratch创世界是一个免费的在线社区，' +
         '在那里你可以创建自己的互动故事、游戏' +
         '以及动画。',
+    keywords: 'Scratch,Scratch社区,Scratch创世界,Scratch编辑器',
 
     // override if mobile-friendly
     viewportWidth: 'device-width',
@@ -38,14 +40,5 @@ module.exports = {
     // Looks like '&gtm_auth=0123456789abcdefghijklm&gtm_preview=env-00&gtm_cookies_win=x'
     // Taken from the middle of: GTM -> Admin -> Environments -> (environment) -> Get Snippet
     // Blank for production
-    gtm_env_auth: process.env.GTM_ENV_AUTH || '',
-    // 使用cdn加载
-    //inject: 'body', // 或者 'head'，根据需要将CDN脚本插入到<body>或<head>标签中
-    //cdn: {
-    //    js: [
-    //        'https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js',
-    //        'https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js',
-    //        'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js'
-    //    ]
-    //}
+    gtm_env_auth: process.env.GTM_ENV_AUTH || ''
 };

@@ -101,7 +101,8 @@ class Preview extends React.Component {
             'initCounts',
             'pushHistory',
             'renderLogin',
-            'setScreenFromOrientation'
+            'setScreenFromOrientation',
+            'handleClickAddonSettings'
         ]);
         const pathname = window.location.pathname.toLowerCase();
         const parts = pathname.split('/').filter(Boolean);
@@ -685,7 +686,6 @@ class Preview extends React.Component {
         jar.set('scratchlanguage', locale, opts);
     }
     handleUpdateProjectId (projectId, callback) {
-        console.log(projectId);
         this.setState({projectId: projectId}, () => {
             const parts = window.location.pathname.toLowerCase()
                 .split('/')
@@ -741,13 +741,25 @@ class Preview extends React.Component {
         );
     }
 
+    openNewWindow (url, name, width = 1280, height = 800) {
+        // 计算屏幕中心位置
+        const screenWidth = window.screen.availWidth;
+        const screenHeight = window.screen.availHeight;
+        width = Math.min(width, screenWidth);
+        height = Math.min(height, screenHeight);
+        const left = Math.round((screenWidth - width) / 2);
+        const top = Math.round((screenHeight - height) / 2);
+
+        window.open(
+            url,
+            name,
+            `width=${width},height=${height},left=${left},top=${top},menubar=no,toolbar=no,location=no,resizable=yes`
+        );
+    }
+
     handleClickAddonSettings (addonId) {
-        // addonId might be a string of the addon to focus on, undefined, or an event (treat like undefined)
-        const path = process.env.ROUTING_STYLE === 'wildcard' ? 'addons' : 'addons.html';
-        const url = `${window.location.pathname[window.location.pathname.length - 1] === '/' ?
-            window.location.pathname :
-            `${window.location.pathname}/`}${path}${typeof addonId === 'string' ? `#${addonId}` : ''}`;
-        window.open(url);
+        const url = `/settings/addons${typeof addonId === 'string' ? `#${addonId}` : ''}`;
+        this.openNewWindow(url, 'ScratchOldCWAddonsSettings');
     }
 
     render () {
@@ -782,7 +794,6 @@ class Preview extends React.Component {
                         <PreviewPresentation
                             customStageSize={this.props.customStageSize}
                             IntlGUI={IntlGUI}
-                            runAddons={GUI.runAddons}
                             addToStudioOpen={this.state.addToStudioOpen}
                             adminModalOpen={this.state.adminModalOpen}
                             adminPanelOpen={this.state.adminPanelOpen}

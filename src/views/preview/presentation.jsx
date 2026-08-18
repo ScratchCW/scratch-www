@@ -864,8 +864,7 @@ PreviewPresentation.propTypes = {
     customStageSize: PropTypes.shape({
         width: PropTypes.number,
         height: PropTypes.number
-    }),
-    runAddons: PropTypes.func
+    })
 };
 
 module.exports = injectIntl(PreviewPresentation);

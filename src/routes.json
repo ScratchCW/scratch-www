@@ -89,32 +89,11 @@
   },
   {
     "name": "addons",
-    "pattern": "^/projects/\\d+/editor/addons?(\\?.*)?$",
-    "routeAlias": "/projects/?$",
+    "pattern": "^/settings/addons?(\\?.*)?$",
+    "routeAlias": "/settings/addons?$",
     "view": "preview/addons",
     "title": "插件设置",
     "dynamicMetaTags": true
-  },
-  {
-    "name": "addons",
-    "pattern": "^/projects/\\d+/addons?(\\?.*)?$",
-    "routeAlias": "/projects/?$",
-    "title": "插件设置",
-    "redirect": "/projects/0/editor/addons"
-  },
-  {
-    "name": "addons",
-    "pattern": "^/projects/addons?(\\?.*)?$",
-    "routeAlias": "/projects/?$",
-    "title": "插件设置",
-    "redirect": "/projects/0/editor/addons"
-  },
-  {
-    "name": "addons",
-    "pattern": "^/projects/editor/addons?(\\?.*)?$",
-    "routeAlias": "/projects/?$",
-    "title": "插件设置",
-    "redirect": "/projects/0/editor/addons"
   },
   {
     "name": "preview-faq-redirect",
@@ -161,7 +140,7 @@
     "pattern": "^/?$",
     "routeAlias": "/?$",
     "view": "splash/splash",
-    "title": "想象、编程、分享"
+    "title": "首页"
   },
   {
     "name": "wedo2",
